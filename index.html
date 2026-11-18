@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore how undersampling a tone produces a lower apparent frequency on an interactive oscilloscope.">
+  <title>Audio Aliasing Scope</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+<main>
+  <div class="heading">
+    <div><h1>Audio Aliasing Scope</h1><p>Explore how undersampling a tone produces a lower apparent frequency on an interactive oscilloscope.</p></div>
+    <a href="https://github.com/netcodermike/audio-aliasing-scope">Project source ↗</a>
+  </div>
+  <div class="workspace">
+    <section class="panel stage" aria-label="Project workspace">
+      <canvas width="760" height="400" aria-label="Original and folded tone waveforms with sample points"></canvas><p id="trace-key" class="extra"></p>
+      <p id="reading" role="status"></p>
+    </section>
+    <section class="panel controls" aria-label="Controls">
+      <form id="settings"><label for="tone">Source frequency<output id="tone-value" for="tone"></output><input id="tone" type="range" min="40" max="960" step="5" value="210"></label><label for="rate">Sample rate<output id="rate-value" for="rate"></output><input id="rate" type="range" min="80" max="760" step="5" value="280"></label><button id="listen" type="button">Hear reconstructed tone</button><p>Lower the sample rate and watch the reconstruction diverge from the input. Playback is a short synthesized tone.</p></form>
+    </section>
+  </div>
+</main>
+</body>
+</html>
